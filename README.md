@@ -37,6 +37,36 @@ This notebook demonstrates portfolio optimization to find the optimal investment
 9. **Display Market Performance:** Shows the market (SPY) performance metrics.
 
 
+## Screenshots
+
+Below are screenshots of the application:
+
+### 1. Opening Page
+
+![Opening Page](Screenshots/Opening%20Page.png)
+
+This is the first page that appears when the application loads.
+
+### 2. Input Box
+
+![Input Box](Screenshots/Input%20Box.png)
+
+Here, the user enters values to customize the portfolio simulation.
+
+### 3. Output Results
+
+![Output Results](Screenshots/Output%20Results.png)
+
+This page displays the results, including all calculations and text outputs after running the simulation.
+
+### 4. Output Graph
+
+![Output Graph](Screenshots/Output%20Graph.png)
+
+This graph shows the results of the Monte Carlo simulation, visualizing the efficient frontier and highlighting the optimal portfolio.
+
+
+
 
 
 ## Run through VS-Code 
