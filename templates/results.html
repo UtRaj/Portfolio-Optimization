@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f4f7;
+            color: #333;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .result-header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+        }
+        .btn-secondary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Optimization Results</h1>
+            <p>Here are the insights based on your portfolio optimization!</p>
+        </div>
+
+        <div class="card">
+            <div class="result-header">
+                <h3>Optimal Portfolio Performance</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Return:</strong> {{ optimal_portfolio_return * 100 | round(2) }}%</p>
+                <p><strong>Volatility:</strong> {{ optimal_portfolio_volatility * 100 | round(2) }}%</p>
+                <p><strong>Sharpe Ratio:</strong> {{ optimal_portfolio_sharpe_ratio | round(2) }}</p>
+                <h3>Efficiency Analysis</h3>
+                <p>{{ efficiency_message }}</p>
+                <h3>Risk-Return Tradeoff</h3>
+                <p>{{ risk_return_tradeoff_message }}</p>
+                <h3>Risk-Free Rate Impact</h3>
+                <p>{{ risk_free_rate_analysis }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="result-header">
+                <h3>Optimal Weights</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for asset, weight in optimal_weights %}
+                    <li class="list-group-item">{{ asset }}: {{ weight * 100 | round(2) }}%</li>
+                    {% endfor %}
+                </ul>
+                <h3>Asset Contribution Insights</h3>
+                <p>{{ asset_contribution_insight }}</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="result-header">
+                <h3>Monte Carlo Simulation Insights</h3>
+            </div>
+            <div class="card-body">
+                <p>{{ monte_carlo_insights }}</p>
+                <h4>Summary of Simulation Results</h4>
+                <p>{{ summary_results }}</p>
+            </div>
+        </div>
+
+        <h3>Efficient Frontier</h3>
+        <img src="{{ img_path }}" alt="Efficient Frontier" class="img-fluid mb-4">
+        
+        <a href="/" class="btn btn-secondary mt-3">Back</a>
+    </div>
+</body>
+</html>

@@ -5,8 +5,8 @@ This notebook demonstrates portfolio optimization to find the optimal investment
 
 ## Features
 
-- Uses Monte Carlo simulation to generate thousands of possible portfolio combinations.
-- Calculates portfolio return, volatility, and Sharpe ratio for each combination.
+- Uses Monte Carlo simulation to generate possible portfolio combinations.
+- Calculates portfolio return, volatility and Sharpe ratio for each combination.
 - Identifies the portfolio with the highest Sharpe ratio as the optimal portfolio.
 - Visualizes the efficient frontier, showing the relationship between return and volatility.
 - Displays the optimal portfolio weights for each asset.
@@ -21,7 +21,7 @@ This notebook demonstrates portfolio optimization to find the optimal investment
 
 
 
-## How it works
+## Working
 
 1. **Import Libraries:** Imports necessary libraries like `yfinance`, `pandas`, `numpy`, and `matplotlib`.
 2. **Define Inputs:** Defines the list of assets, start and end dates for data retrieval, and other parameters like the number of portfolios to simulate.
@@ -35,6 +35,41 @@ This notebook demonstrates portfolio optimization to find the optimal investment
 7. **Visualization:** Plots the efficient frontier, highlighting the optimal portfolio and the market performance (SPY).
 8. **Display Optimal Portfolio Details:** Shows the optimal portfolio weights and performance metrics.
 9. **Display Market Performance:** Shows the market (SPY) performance metrics.
+
+
+
+
+## Run through VS-Code 
+
+1. Clone the repository.
+
+2. Install requirements.txt file.
+
+``
+pip install -r requirements.txt
+``
+3. Run the Python Code 
+
+``
+python app.py
+``
+
+The web-url shall be generated on which the application would run.
+
+
+
+## Run through Docker
+
+1. To run through Docker, open the cmd after installing Docker Desktop.
+
+``
+docker build -t flask-app .
+docker run -p 5000:5000 flask-app
+``
+
+The web-url shall be generated on which the application would run.
+
+
 
 
 # Conclusion:

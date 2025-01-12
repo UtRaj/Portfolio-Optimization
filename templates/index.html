@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Optimizer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f4f7;
+            color: #333;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Portfolio Optimizer</h1>
+            <p>Optimize your investment portfolio with data-driven insights!</p>
+        </div>
+
+        <h2>Available Assets</h2>
+        <ul class="list-group mb-4">
+            {% for ticker, company in assets_info.items() %}
+            <li class="list-group-item">{{ ticker }} - {{ company }}</li>
+            {% endfor %}
+        </ul>
+
+        <form action="/optimize" method="POST">
+            <div class="form-group">
+                <label for="assets"><i class="fas fa-chart-pie"></i> Assets (comma separated):</label>
+                <input type="text" class="form-control" id="assets" name="assets" required>
+            </div>
+            <div class="form-group">
+                <label for="start_date"><i class="fas fa-calendar-alt"></i> Start Date:</label>
+                <input type="date" class="form-control" id="start_date" name="start_date" required>
+            </div>
+            <div class="form-group">
+                <label for="end_date"><i class="fas fa-calendar-alt"></i> End Date:</label>
+                <input type="date" class="form-control" id="end_date" name="end_date" required>
+            </div>
+            <div class="form-group">
+                <label for="market_representation"><i class="fas fa-globe"></i> Market Representation:</label>
+                <select class="form-control" id="market_representation" name="market_representation" required>
+                    {% for ticker, name in market_representations.items() %}
+                    <option value="{{ ticker }}">{{ name }} ({{ ticker }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="num_portfolios"><i class="fas fa-signal"></i> Number of Portfolios:</label>
+                <input type="number" class="form-control" id="num_portfolios" name="num_portfolios" required>
+            </div>
+            <div class="form-group">
+                <label for="risk_free_rate"><i class="fas fa-percent"></i> Risk-Free Rate:</label>
+                <input type="number" step="0.01" class="form-control" id="risk_free_rate" name="risk_free_rate" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Optimize</button>
+        </form>
+    </div>
+</body>
+</html>
