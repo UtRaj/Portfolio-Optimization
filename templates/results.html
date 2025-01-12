@@ -61,6 +61,18 @@
             </div>
         </div>
 
+
+        <div class="card">
+            <div class="result-header">
+                <h3>Market Performance</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Market Return:</strong> {{ market_return * 100 | round(2) }}%</p>
+                <p><strong>Market Volatility:</strong> {{ market_volatility * 100 | round(2) }}%</p>
+                <p><strong>Market Sharpe Ratio:</strong> {{ market_sharpe_ratio | round(2) }}</p>
+            </div>
+        </div>
+
         <div class="card">
             <div class="result-header">
                 <h3>Optimal Weights</h3>
