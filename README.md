@@ -45,14 +45,16 @@ This notebook demonstrates portfolio optimization to find the optimal investment
 
 2. Install requirements.txt file.
 
-``
+```
 pip install -r requirements.txt
-``
+```
+
 3. Run the Python Code 
 
-``
+```
 python app.py
-``
+```
+
 
 The web-url shall be generated on which the application would run.
 
@@ -62,10 +64,13 @@ The web-url shall be generated on which the application would run.
 
 1. To run through Docker, open the cmd after installing Docker Desktop.
 
-``
+```
 docker build -t flask-app .
+```
+
+```
 docker run -p 5000:5000 flask-app
-``
+```
 
 The web-url shall be generated on which the application would run.
 
